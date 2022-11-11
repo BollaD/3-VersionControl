@@ -29,35 +29,35 @@ namespace UserMaintenance
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.LeftListbox = new System.Windows.Forms.ListBox();
+            this.TopTextBox = new System.Windows.Forms.TextBox();
+            this.BottomTextBox = new System.Windows.Forms.TextBox();
             this.TopLbl = new System.Windows.Forms.Label();
             this.BottomLbl = new System.Windows.Forms.Label();
             this.BottomButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // LeftListbox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 18);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(236, 316);
-            this.listBox1.TabIndex = 0;
+            this.LeftListbox.FormattingEnabled = true;
+            this.LeftListbox.Location = new System.Drawing.Point(12, 18);
+            this.LeftListbox.Name = "LeftListbox";
+            this.LeftListbox.Size = new System.Drawing.Size(236, 316);
+            this.LeftListbox.TabIndex = 0;
             // 
-            // textBox1
+            // TopTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(358, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 20);
-            this.textBox1.TabIndex = 1;
+            this.TopTextBox.Location = new System.Drawing.Point(358, 18);
+            this.TopTextBox.Name = "TopTextBox";
+            this.TopTextBox.Size = new System.Drawing.Size(205, 20);
+            this.TopTextBox.TabIndex = 1;
             // 
-            // textBox2
+            // BottomTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(358, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(205, 20);
-            this.textBox2.TabIndex = 2;
+            this.BottomTextBox.Location = new System.Drawing.Point(358, 44);
+            this.BottomTextBox.Name = "BottomTextBox";
+            this.BottomTextBox.Size = new System.Drawing.Size(205, 20);
+            this.BottomTextBox.TabIndex = 2;
             // 
             // TopLbl
             // 
@@ -85,6 +85,7 @@ namespace UserMaintenance
             this.BottomButton.TabIndex = 5;
             this.BottomButton.Text = "button1";
             this.BottomButton.UseVisualStyleBackColor = true;
+            this.BottomButton.Click += new System.EventHandler(this.BottomButton_Click);
             // 
             // Form1
             // 
@@ -94,9 +95,9 @@ namespace UserMaintenance
             this.Controls.Add(this.BottomButton);
             this.Controls.Add(this.BottomLbl);
             this.Controls.Add(this.TopLbl);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.BottomTextBox);
+            this.Controls.Add(this.TopTextBox);
+            this.Controls.Add(this.LeftListbox);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -106,9 +107,9 @@ namespace UserMaintenance
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ListBox LeftListbox;
+        private System.Windows.Forms.TextBox TopTextBox;
+        private System.Windows.Forms.TextBox BottomTextBox;
         private System.Windows.Forms.Label TopLbl;
         private System.Windows.Forms.Label BottomLbl;
         private System.Windows.Forms.Button BottomButton;
