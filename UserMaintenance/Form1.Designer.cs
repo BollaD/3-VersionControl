@@ -31,9 +31,7 @@ namespace UserMaintenance
         {
             this.LeftListbox = new System.Windows.Forms.ListBox();
             this.TopTextBox = new System.Windows.Forms.TextBox();
-            this.BottomTextBox = new System.Windows.Forms.TextBox();
             this.TopLbl = new System.Windows.Forms.Label();
-            this.BottomLbl = new System.Windows.Forms.Label();
             this.BottomButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -52,13 +50,6 @@ namespace UserMaintenance
             this.TopTextBox.Size = new System.Drawing.Size(205, 20);
             this.TopTextBox.TabIndex = 1;
             // 
-            // BottomTextBox
-            // 
-            this.BottomTextBox.Location = new System.Drawing.Point(358, 44);
-            this.BottomTextBox.Name = "BottomTextBox";
-            this.BottomTextBox.Size = new System.Drawing.Size(205, 20);
-            this.BottomTextBox.TabIndex = 2;
-            // 
             // TopLbl
             // 
             this.TopLbl.AutoSize = true;
@@ -68,18 +59,9 @@ namespace UserMaintenance
             this.TopLbl.TabIndex = 3;
             this.TopLbl.Text = "label1";
             // 
-            // BottomLbl
-            // 
-            this.BottomLbl.AutoSize = true;
-            this.BottomLbl.Location = new System.Drawing.Point(282, 47);
-            this.BottomLbl.Name = "BottomLbl";
-            this.BottomLbl.Size = new System.Drawing.Size(35, 13);
-            this.BottomLbl.TabIndex = 4;
-            this.BottomLbl.Text = "label2";
-            // 
             // BottomButton
             // 
-            this.BottomButton.Location = new System.Drawing.Point(285, 83);
+            this.BottomButton.Location = new System.Drawing.Point(285, 44);
             this.BottomButton.Name = "BottomButton";
             this.BottomButton.Size = new System.Drawing.Size(278, 29);
             this.BottomButton.TabIndex = 5;
@@ -93,9 +75,7 @@ namespace UserMaintenance
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 347);
             this.Controls.Add(this.BottomButton);
-            this.Controls.Add(this.BottomLbl);
             this.Controls.Add(this.TopLbl);
-            this.Controls.Add(this.BottomTextBox);
             this.Controls.Add(this.TopTextBox);
             this.Controls.Add(this.LeftListbox);
             this.Name = "Form1";
@@ -109,9 +89,7 @@ namespace UserMaintenance
 
         private System.Windows.Forms.ListBox LeftListbox;
         private System.Windows.Forms.TextBox TopTextBox;
-        private System.Windows.Forms.TextBox BottomTextBox;
         private System.Windows.Forms.Label TopLbl;
-        private System.Windows.Forms.Label BottomLbl;
         private System.Windows.Forms.Button BottomButton;
     }
 }

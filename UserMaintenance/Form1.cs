@@ -18,8 +18,7 @@ namespace UserMaintenance
         public Form1()
         {
             InitializeComponent();
-            TopLbl.Text = ProjectResource.LastName;
-            BottomLbl.Text = ProjectResource.FirstName;
+            TopLbl.Text = ProjectResource.FullName;
             BottomButton.Text = ProjectResource.Add;
 
             LeftListbox.DataSource = users;
@@ -31,8 +30,7 @@ namespace UserMaintenance
         {
             var u = new User()
             {
-                LastName = TopTextBox.Text,
-                FirstName = BottomTextBox.Text
+                FullName = TopTextBox.Text,
             };
             users.Add(u);
         }
