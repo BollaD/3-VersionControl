@@ -34,6 +34,7 @@ namespace UserMaintenance
             this.TopLbl = new System.Windows.Forms.Label();
             this.BottomButton = new System.Windows.Forms.Button();
             this.SmallButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LeftListbox
@@ -80,11 +81,22 @@ namespace UserMaintenance
             this.SmallButton.UseVisualStyleBackColor = true;
             this.SmallButton.Click += new System.EventHandler(this.SmallButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(255, 310);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(23, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "-";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 347);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.SmallButton);
             this.Controls.Add(this.BottomButton);
             this.Controls.Add(this.TopLbl);
@@ -104,6 +116,7 @@ namespace UserMaintenance
         private System.Windows.Forms.Label TopLbl;
         private System.Windows.Forms.Button BottomButton;
         private System.Windows.Forms.Button SmallButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 

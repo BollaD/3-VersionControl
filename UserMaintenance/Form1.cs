@@ -56,5 +56,15 @@ namespace UserMaintenance
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var selectedID = ((Guid)LeftListbox.SelectedValue);
+
+            var selectedItem = (from u in users
+                                where selectedID == u.ID
+                                select u).FirstOrDefault();
+            users.Remove(selectedItem);
+        }
     }
 }
