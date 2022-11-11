@@ -33,6 +33,7 @@ namespace UserMaintenance
             this.TopTextBox = new System.Windows.Forms.TextBox();
             this.TopLbl = new System.Windows.Forms.Label();
             this.BottomButton = new System.Windows.Forms.Button();
+            this.SmallButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LeftListbox
@@ -69,11 +70,22 @@ namespace UserMaintenance
             this.BottomButton.UseVisualStyleBackColor = true;
             this.BottomButton.Click += new System.EventHandler(this.BottomButton_Click);
             // 
+            // SmallButton
+            // 
+            this.SmallButton.Location = new System.Drawing.Point(419, 79);
+            this.SmallButton.Name = "SmallButton";
+            this.SmallButton.Size = new System.Drawing.Size(144, 29);
+            this.SmallButton.TabIndex = 6;
+            this.SmallButton.Text = "button1";
+            this.SmallButton.UseVisualStyleBackColor = true;
+            this.SmallButton.Click += new System.EventHandler(this.SmallButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 347);
+            this.Controls.Add(this.SmallButton);
             this.Controls.Add(this.BottomButton);
             this.Controls.Add(this.TopLbl);
             this.Controls.Add(this.TopTextBox);
@@ -91,6 +103,7 @@ namespace UserMaintenance
         private System.Windows.Forms.TextBox TopTextBox;
         private System.Windows.Forms.Label TopLbl;
         private System.Windows.Forms.Button BottomButton;
+        private System.Windows.Forms.Button SmallButton;
     }
 }
 
