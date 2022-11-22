@@ -12,9 +12,19 @@ namespace SQL_Flat
 {
     public partial class Form1 : Form
     {
+        RealEstateEntities context = new RealEstateEntities();
+
+        List<Flat> Flats;
+
         public Form1()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        public void LoadData()
+        {
+            Flats = context.Flats.ToList();
         }
     }
 }
