@@ -18,9 +18,12 @@ namespace SOAP_MNB
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
 
+        BindingList<string> Currencies = new BindingList<string>();
+
         public Form1()
         {
             InitializeComponent();
+            ValutaLekerdezes(GetCurrencies());
             RefreshData();
         }
 
@@ -30,7 +33,8 @@ namespace SOAP_MNB
 
             Rates_DGW.DataSource = Rates;
             chartRateData.DataSource = Rates;
-            xmlFeldolgozás();
+            comboBox1.DataSource = Currencies;
+            xmlFeldolgozás(SzolgaltatasLehivas());
             ChartSetup();
         }
 
@@ -52,16 +56,17 @@ namespace SOAP_MNB
             return result;
         }
 
-        public void xmlFeldolgozás()
+        public void xmlFeldolgozás(string result)
         {
             var xml = new XmlDocument();
-            xml.LoadXml(SzolgaltatasLehivas());
+            xml.LoadXml(result);
 
             foreach (XmlElement element in xml.DocumentElement)
             {
                 var rate = new RateData();
                 rate.Date = DateTime.Parse(element.GetAttribute("date"));
                 var xml_element = (XmlElement)element.ChildNodes[0];
+                if (xml_element == null) continue;
                 rate.Currency = xml_element.GetAttribute("curr");
                 var unit = decimal.Parse(xml_element.GetAttribute("unit"));
                 var inner = decimal.Parse(xml_element.InnerText);
@@ -108,6 +113,33 @@ namespace SOAP_MNB
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshData();
+        }
+
+        public void ValutaLekerdezes(string result)
+        {
+            XmlDocument xml = new XmlDocument();
+            xml.LoadXml(result);
+
+            foreach (XmlElement element in xml.DocumentElement)
+            {
+                foreach (XmlElement xml_element in element.ChildNodes)
+                {
+                    Currencies.Add(xml_element.InnerText);
+                }
+            }
+        }
+
+        public string GetCurrencies()
+        {
+            var mnbArfolyam = new MNBArfolyamServiceSoapClient();
+
+            var request = new GetCurrenciesRequestBody();
+
+            var response = mnbArfolyam.GetCurrencies(request);
+
+            var result = response.GetCurrenciesResult;
+
+            return result;
         }
     }
 }
