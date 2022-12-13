@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace SOAP_MNB
 {
@@ -23,7 +24,7 @@ namespace SOAP_MNB
             Rates_DGW.DataSource = Rates;
         }
 
-        public void SzolgaltatasLehivas()
+        public string SzolgaltatasLehivas()
         {
             var mnbService = new MNBArfolyamServiceSoapClient();
 
@@ -37,6 +38,33 @@ namespace SOAP_MNB
             var response = mnbService.GetExchangeRates(request);
 
             var result = response.GetExchangeRatesResult;
+
+            return result;
+        }
+
+        public void xmlFeldolgozás()
+        {
+            var xml = new XmlDocument();
+            xml.LoadXml(SzolgaltatasLehivas());
+
+            foreach (XmlElement element in xml.DocumentElement)
+            {
+                var rate = new RateData();
+                rate.Date = DateTime.Parse(element.GetAttribute("date"));
+                var xml_element = (XmlElement)element.ChildNodes[0];
+                rate.Currency = xml_element.GetAttribute("curr");
+                var unit = decimal.Parse(xml_element.GetAttribute("unit"));
+                var inner = decimal.Parse(xml_element.InnerText);
+                if (unit != 0)
+                {
+                    rate.Value = inner;
+                }
+                else
+                {
+                    rate.Value = unit;
+                }
+                Rates.Add(rate);
+            }
         }
     }
 }
