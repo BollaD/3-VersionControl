@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml;
 
 namespace SOAP_MNB
@@ -20,8 +21,10 @@ namespace SOAP_MNB
         public Form1()
         {
             InitializeComponent();
-            SzolgaltatasLehivas();
             Rates_DGW.DataSource = Rates;
+            chartRateData.DataSource = Rates;
+            xmlFeldolgozás();
+            ChartSetup();
         }
 
         public string SzolgaltatasLehivas()
@@ -65,6 +68,24 @@ namespace SOAP_MNB
                 }
                 Rates.Add(rate);
             }
+        }
+
+        public void ChartSetup()
+        {
+            var series = chartRateData.Series[0];
+            var legend = chartRateData.Legends[0];
+            var chartArea = chartRateData.ChartAreas[0];
+
+            series.ChartType = SeriesChartType.Line;
+            series.XValueMember = "Date";
+            series.YValueMembers = "Value";
+            series.BorderWidth = 2;
+
+            legend.Enabled = false;
+
+            chartArea.AxisX.MajorGrid.Enabled = false;
+            chartArea.AxisY.MajorGrid.Enabled = false;
+            chartArea.AxisY.IsStartedFromZero = false;
         }
     }
 }

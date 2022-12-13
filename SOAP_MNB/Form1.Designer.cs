@@ -29,8 +29,13 @@ namespace SOAP_MNB
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Rates_DGW = new System.Windows.Forms.DataGridView();
+            this.chartRateData = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.Rates_DGW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRateData)).BeginInit();
             this.SuspendLayout();
             // 
             // Rates_DGW
@@ -38,18 +43,36 @@ namespace SOAP_MNB
             this.Rates_DGW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Rates_DGW.Location = new System.Drawing.Point(12, 12);
             this.Rates_DGW.Name = "Rates_DGW";
-            this.Rates_DGW.Size = new System.Drawing.Size(408, 248);
+            this.Rates_DGW.Size = new System.Drawing.Size(289, 426);
             this.Rates_DGW.TabIndex = 0;
+            // 
+            // chartRateData
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartRateData.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartRateData.Legends.Add(legend1);
+            this.chartRateData.Location = new System.Drawing.Point(307, 12);
+            this.chartRateData.Name = "chartRateData";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartRateData.Series.Add(series1);
+            this.chartRateData.Size = new System.Drawing.Size(481, 426);
+            this.chartRateData.TabIndex = 1;
+            this.chartRateData.Text = "chart1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chartRateData);
             this.Controls.Add(this.Rates_DGW);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.Rates_DGW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRateData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -57,6 +80,7 @@ namespace SOAP_MNB
         #endregion
 
         private System.Windows.Forms.DataGridView Rates_DGW;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartRateData;
     }
 }
 
