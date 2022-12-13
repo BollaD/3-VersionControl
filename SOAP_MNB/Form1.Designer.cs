@@ -29,13 +29,34 @@ namespace SOAP_MNB
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.Rates_DGW = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.Rates_DGW)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // Rates_DGW
+            // 
+            this.Rates_DGW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Rates_DGW.Location = new System.Drawing.Point(12, 12);
+            this.Rates_DGW.Name = "Rates_DGW";
+            this.Rates_DGW.Size = new System.Drawing.Size(408, 248);
+            this.Rates_DGW.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Rates_DGW);
+            this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.Rates_DGW)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView Rates_DGW;
     }
 }
 
