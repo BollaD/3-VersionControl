@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaP_Portfolio", "VaP_Portfolio.csproj", "{1631CB3A-AF45-4F81-9CB2-8E55FA47372F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1631CB3A-AF45-4F81-9CB2-8E55FA47372F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1631CB3A-AF45-4F81-9CB2-8E55FA47372F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1631CB3A-AF45-4F81-9CB2-8E55FA47372F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1631CB3A-AF45-4F81-9CB2-8E55FA47372F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F0B4453-3F65-45B4-838C-930EB1F524CE}
+	EndGlobalSection
+EndGlobal
