@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace VaP_Portfolio
         List<Tick> Ticks;
         PortfolioEntities context = new PortfolioEntities();
         List<PortfolioItem> Portfolio = new List<PortfolioItem>();
+        List<decimal> Nyereségek = new List<decimal>();
 
         public Form1()
         {
@@ -25,7 +27,6 @@ namespace VaP_Portfolio
             CreatePortfolio();
 
             //VaR kiszámítása
-            List<decimal> Nyereségek = new List<decimal>();
             int intervalum = 30;
             DateTime kezdőDátum = (from x in Ticks select x.TradingDay).Min();
             DateTime záróDátum = new DateTime(2016, 12, 30);
@@ -42,7 +43,7 @@ namespace VaP_Portfolio
                                       orderby x
                                       select x)
                                         .ToList();
-            MessageBox.Show(nyereségekRendezve[nyereségekRendezve.Count() / 5].ToString());
+            //MessageBox.Show(nyereségekRendezve[nyereségekRendezve.Count() / 5].ToString());
         }
 
         private void CreatePortfolio()
@@ -67,6 +68,29 @@ namespace VaP_Portfolio
                 value += (decimal)last.Price * item.Volume;
             }
             return value;
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.InitialDirectory = Application.StartupPath;
+            sfd.Filter = "CSV|*.csv";
+            sfd.DefaultExt = "csv";
+            sfd.AddExtension = true;
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(sfd.FileName, true, Encoding.UTF8))
+                {
+                    sw.WriteLine($"Időszak;Nyereség");
+                    int i = 0;
+                    foreach (decimal nyereseg in Nyereségek)
+                    {
+                        sw.WriteLine($"{i};{nyereseg}");
+                        i++;
+                    }
+                }
+            }
         }
     }
 }
