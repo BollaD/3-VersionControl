@@ -12,9 +12,14 @@ namespace VaP_Portfolio
 {
     public partial class Form1 : Form
     {
+        List<Tick> Ticks;
+        PortfolioEntities context = new PortfolioEntities();
+
         public Form1()
         {
             InitializeComponent();
+            Ticks = context.Ticks.ToList();
+            Tick_DGW.DataSource = Ticks;
         }
     }
 }
